@@ -320,6 +320,7 @@ input[type="checkbox"] {
 
         &:hover {
             filter: brightness(75%);
+            transform: scale(1.1);
         }
     }
 
@@ -1116,6 +1117,190 @@ button:focus-visible {}
     }
 }
 
+// страница product 
+
+.carousel {
+    height: 777px;
+    background: #F7F7F7;
+    width: 100%;
+    max-width: 2560px;
+    margin: 0 auto;
+
+    &_all {
+        padding-top: 11px;
+        text-align: center;
+        position: relative;
+    }
+
+    &_button_left {
+        display: block;
+        height: 47px;
+        width: 47px;
+        border: none;
+        background: rgba(42, 42, 42, 0.15);
+        position: absolute;
+        top: 365px;
+        left: 0;
+
+        &:hover svg {
+            fill: #F16D7F;
+        }
+
+        &:active svg {
+            fill: #E05C6E;
+        }
+
+        & svg {
+            fill: #000000;
+        }
+    }
+
+    &_button_right {
+        display: block;
+        height: 47px;
+        width: 47px;
+        border: none;
+        background: rgba(42, 42, 42, 0.15);
+        position: absolute;
+        top: 365px;
+        right: 0;
+
+        &:hover svg {
+            fill: #F16D7F;
+        }
+
+        &:active svg {
+            fill: #E05C6E;
+        }
+
+        & svg {
+            fill: #000000;
+        }
+    }
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: -40px;
+    margin-bottom: 128px;
+    padding: 64px 0 64px 0;
+    background-color: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    position: relative;
+
+    &_margin {
+        height: 98px;
+    }
+
+    &_info {
+        &_title {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 17px;
+            color: #F16D7F;
+            text-transform: uppercase;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 63px;
+                height: 4px;
+                background-color: #EF5B70;
+                position: absolute;
+                top: 94px;
+                left: 538px;
+            }
+        }
+
+        &_title_add {
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 22px;
+            color: #4D4D4D;
+            text-transform: uppercase;
+            margin-top: 27px;
+        }
+
+        &_txt {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            color: #5E5E5E;
+            width: 50%;
+            margin: 48px auto;
+        }
+
+        &_cost {
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 29px;
+            color: #EF5B70;
+            margin-top: 32px;
+            margin-bottom: 64px;
+        }
+    }
+
+    &_cart {
+        display: flex;
+        justify-content: center;
+
+        &_button {
+            display: block;
+            align-items: center;
+            padding: 14px 38px;
+            border: 1px solid #FF6A6A;
+            background-color: transparent;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #F26376;
+
+            &:hover {
+                background-color: #F26376;
+                color: #FFF;
+
+                svg {
+                    fill: #FFF;
+                }
+            }
+
+            & svg {
+                fill: #F26376;
+                height: 24px;
+                padding-right: 22px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+.product_navigation {
+    &_filter {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        margin-top: 64px;
+        margin-bottom: 48px;
+
+        :last-child {
+            margin-right: 0;
+        }
+
+        & li {
+            margin-right: 42px;
+        }
+    }
+}
+
+hr {
+    width: 50%;
+    margin: 0 auto;
+    color: #EAEAEA;
+}
 
 // страница cart
 
@@ -1125,8 +1310,9 @@ button:focus-visible {}
 
     &_items {
         display: flex;
-        box-shadow: 10px 10px 40px 5px #6F6E6E;
+        box-shadow: 0 10px 20px 5px #6F6E6E;
         margin-bottom: 40px;
+        position: relative;
 
         &_img {
             width: 262px;
@@ -1140,6 +1326,7 @@ button:focus-visible {}
             color: #222222;
             text-transform: uppercase;
             margin: 22px 97px 42px 31px;
+            width: 50%;
         }
 
         &_txt {
@@ -1147,16 +1334,67 @@ button:focus-visible {}
             font-size: 22px;
             line-height: 26px;
             color: #575757;
-            margin-left: 32px;
-            margin-bottom: 62px;
+            margin-left: 31px;
+            margin-bottom: 6px;
 
             & span {
                 color: #F26376;
             }
+
+            & button {
+                margin-left: 40px;
+                padding: 1px 15px;
+                border: 1px solid #EAEAEA;
+                background-color: #fff;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 22px;
+                color: #656565;
+            }
         }
     }
 
-    &_choose {}
+    &_close {
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        top: 28px;
+        right: 22px;
+
+        & svg {
+            fill: #575757;
+        }
+
+        &:hover svg {
+            fill: #F16D7F;
+        }
+
+
+    }
+
+    &_choose {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 72px;
+
+        & button {
+            padding: 16px 40px;
+            background-color: #fff;
+            border: 1px solid #A4A4A4;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #F26376;
+                color: #FFF;
+
+            }
+        }
+    }
 
     &_left {
         width: 60%;
@@ -1166,17 +1404,116 @@ button:focus-visible {}
     &_right {
         width: 30%;
 
+        & form {
+            display: flex;
+            flex-direction: column;
+        }
+
         &_title {
             font-weight: 300;
             font-size: 16px;
             line-height: 19px;
             color: #222222;
             text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
-        & form {
-            display: flex;
-            flex-direction: column;
+        &_label {}
+
+        &_input {
+
+            padding: 12px 12px;
+            margin-bottom: 21px;
+            border: 1px solid #A4A4A4;
+
+            &::placeholder {
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 16px;
+                color: #B1B1B1;
+            }
+        }
+
+        &_button {
+            background-color: #fff;
+            border: 1px solid #A4A4A4;
+            padding: 10px 10px;
+            width: 100px;
+            font-weight: 300;
+            font-size: 11px;
+            line-height: 13px;
+            color: #4A4A4A;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #F26376;
+                color: #FFF;
+
+            }
+        }
+
+        &_check {
+            height: 214px;
+            background: #F5F3F3;
+            margin-top: 57px;
+            text-align: center;
+
+            & hr {
+                background: #E2E2E2;
+                width: 80%;
+                margin-top: 21px;
+                margin-bottom: 17px;
+            }
+
+            &_title {
+                font-weight: 400;
+                font-size: 11px;
+                line-height: 13px;
+                color: #4A4A4A;
+                text-transform: uppercase;
+                padding: 39px 34px 12px 34px;
+                text-align: right;
+
+                & span {
+                    padding-left: 20px;
+                }
+            }
+
+            &_subtitle {
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 19px;
+                color: #222222;
+                text-transform: uppercase;
+                padding: 0 34px 0 34px;
+                text-align: right;
+
+                & span {
+                    padding-left: 20px;
+                    color: #F16D7F;
+                }
+            }
+
+            &_button {
+                padding: 15px 41px;
+                background-color: #F16D7F;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 19px;
+                color: #FFFFFF;
+                text-transform: uppercase;
+                border: none;
+                cursor: pointer;
+                width: 80%;
+                align-self: center;
+
+                &:hover {
+                    background-color: #FFF;
+                    color: #F16D7F;
+                    outline: 1px solid #F16D7F;
+                }
+            }
         }
     }
 }
@@ -1243,28 +1580,29 @@ button:focus-visible {}
             font-weight: 400;
             font-size: 16px;
             line-height: 19px;
-            color: #F26376;
+            color: #FFF;
             padding: 14px 38px;
             text-decoration: none;
             display: inline-block;
             background-color: #F16D7F;
             margin-top: 39px;
+            text-transform: uppercase;
+            cursor: pointer;
 
-            & a {
-                text-decoration: none;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 17px;
-                color: #FFFFFF;
-                text-transform: uppercase;
+            & svg {
+                fill: #FFF;
+                padding-left: 20px;
             }
 
-            &::after {
-                content: url(img/registration_arrow.svg);
-                margin-left: 20px;
+            &:hover {
+                background-color: #FFF;
+                color: #F16D7F;
+
+                svg {
+                    fill: #F16D7F;
+                }
             }
         }
-
     }
 
     &_right {
@@ -1289,131 +1627,10 @@ button:focus-visible {}
             color: #000000;
             margin-bottom: 16px;
 
-            &::before {
-                content: url(img/registration_check.svg);
+            & svg {
+                fill: black;
                 padding-right: 20px;
             }
         }
     }
-}
-
-// страница product 
-
-.carousel {
-    height: 777px;
-    background: #F7F7F7;
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-
-    &_all {
-        padding-top: 11px;
-        text-align: center;
-    }
-}
-
-.product {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: -40px;
-    margin-bottom: 128px;
-    padding: 64px 0 64px 0;
-    background-color: #FFFFFF;
-    border: 1px solid #EAEAEA;
-
-    &_info {
-        &_title {
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 17px;
-            color: #F16D7F;
-            text-transform: uppercase;
-        }
-
-        &_title_add {
-            font-weight: 300;
-            font-size: 18px;
-            line-height: 22px;
-            color: #4D4D4D;
-            text-transform: uppercase;
-            margin-top: 27px;
-        }
-
-        &_txt {
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 17px;
-            text-align: center;
-            color: #5E5E5E;
-            width: 50%;
-            margin: 48px auto;
-        }
-
-        &_cost {
-            font-weight: 300;
-            font-size: 24px;
-            line-height: 29px;
-            color: #EF5B70;
-            margin-top: 32px;
-            margin-bottom: 64px;
-        }
-    }
-
-    &_cart {
-        display: flex;
-        justify-content: center;
-
-        &_button {
-            border: 1px solid #FF6A6A;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 19px;
-            color: #F26376;
-            padding: 14px 38px;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        & a::before {
-            content: url(img/cart_product.svg);
-            margin-right: 22px;
-            vertical-align: middle;
-        }
-    }
-}
-
-.product_navigation {
-    &_filter {
-        display: flex;
-        justify-content: center;
-        list-style-type: none;
-        margin-top: 64px;
-        margin-bottom: 48px;
-
-        li {
-            ::after {
-                content: url(img/trending.svg);
-                margin-left: 10px;
-                max-height: 17px;
-            }
-
-            margin: 0 48px 0 0;
-
-            a {
-                text-decoration: none;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 17px;
-                color: #6F6E6E;
-                text-transform: uppercase;
-            }
-        }
-    }
-}
-
-hr {
-    width: 50%;
-    margin: 0 auto;
-    color: #EAEAEA;
 }
