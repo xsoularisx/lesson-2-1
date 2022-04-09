@@ -246,6 +246,8 @@ input[type="checkbox"] {
             background-image: url(../img/man_in_jacket.png);
             background-repeat: no-repeat;
             background-position-x: center;
+            background-size: cover;
+            height: 100%;
         }
     }
 }
@@ -321,6 +323,7 @@ input[type="checkbox"] {
         &:hover {
             filter: brightness(75%);
             transform: scale(1.1);
+            transition: 1s ease;
         }
     }
 
@@ -1341,15 +1344,20 @@ hr {
                 color: #F26376;
             }
 
-            & button {
+            & input {
                 margin-left: 40px;
-                padding: 1px 15px;
+                padding: 1px 0 1px 15px;
                 border: 1px solid #EAEAEA;
                 background-color: #fff;
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 22px;
                 color: #656565;
+
+                &:focus-visible {
+                    border: 1px solid #EAEAEA;
+                    outline: none;
+                }
             }
         }
     }
@@ -1631,6 +1639,172 @@ hr {
                 fill: black;
                 padding-right: 20px;
             }
+        }
+    }
+}
+
+// планшет
+@media (max-width: 1024px) {
+    .header_main {
+        padding: 20px 0 20px 0;
+    }
+
+    .container {
+        padding: 0 16px 0 16px;
+        width: auto;
+    }
+
+    .navigation {
+        &_left {
+            margin-left: 32px;
+        }
+
+        &_right {
+            margin-right: 32px;
+        }
+    }
+
+    .logo {
+        margin-bottom: 20px;
+
+        &_main {
+            height: 368px;
+
+            &_img {
+                background-size: auto 368px;
+            }
+        }
+    }
+
+    .brand {
+
+        &_title {
+            font-size: 44px;
+            line-height: 53px;
+        }
+
+        &_subtitle {
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+
+    .stock {
+        width: auto;
+
+        &_daily_1,
+        &_daily_2,
+        &_daily_3,
+        &_daily_4 {
+            width: 232px;
+            height: 167px;
+        }
+
+        &_daily_4 {
+            margin-top: 19px;
+            width: 100%;
+            height: 116px;
+        }
+    }
+
+    .conditions {
+        margin-top: 65px;
+        padding: 48px 0 64px 0;
+
+        &_all {
+            flex-direction: column;
+        }
+
+        &_part {
+            margin-bottom: 48px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .browse {
+        margin-top: 0;
+    }
+
+    .footer {
+        &_main {
+            &_top {
+                height: 693px;
+                background-position: 25%;
+
+                &_all {
+                    flex-direction: column;
+                }
+            }
+
+            &_bottom {
+                padding: 24px 8px 24px 8px;
+            }
+        }
+    }
+
+    .avatar {
+        margin: 53px 0 48px 0;
+
+        &_txt {
+            width: 100%;
+        }
+    }
+
+    .subscribe {
+        width: 100%;
+        margin-bottom: 219px;
+
+        &_form {
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 667px) {
+    .navigation {
+        &_left {
+            margin-left: 16px;
+        }
+
+        &_right {
+            margin-right: 16px;
+
+            & li {
+                margin-right: 0;
+            }
+
+            &_link {
+                display: none;
+            }
+        }
+    }
+
+    .logo {
+        &_main {
+            &_img {
+                display: none;
+            }
+        }
+    }
+
+    .brand {
+        ::before {
+            height: 61px;
+        }
+
+        width: 100%;
+
+        &_title {
+            font-size: 38px;
+            line-height: 46px;
+        }
+
+        &_subtitle {
+            font-size: 20px;
+            line-height: 24px;
         }
     }
 }
