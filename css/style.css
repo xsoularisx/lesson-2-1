@@ -1052,6 +1052,7 @@ input[type=checkbox]:checked ~ label svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 20px;
 }
 
 .filter ~ label span {
@@ -1096,6 +1097,9 @@ input[type=checkbox]:checked ~ label svg {
   visibility: hidden;
   list-style: none;
   width: 360px;
+  margin-left: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 50px 20px 20px 20px;
   position: absolute;
   top: -20px;
@@ -1173,7 +1177,8 @@ input[type=checkbox]:checked ~ label svg {
   list-style: none;
 }
 
-.filter-subitem {
+.filter-subitem a {
+  text-decoration: none;
   display: block;
   color: #6f6e6e;
   margin: 0px 0px 11px 14px;
@@ -2291,22 +2296,25 @@ hr {
   .product_navigation_filter li {
     margin-right: 25px;
   }
-  .filter {
-    width: 50%;
+  .products-header-filter form {
+    width: 100%;
+    max-width: 50px;
   }
   .filters {
     max-width: 375px;
   }
-  .filters_right li {
-    margin-right: 40px;
+  .filter ~ label {
+    padding-left: 0;
   }
   .filter-list {
-    width: 190px;
+    width: 100%;
+    width: 360px;
+    margin-left: 12px;
   }
-  .filter-btn span {
+  .filter ~ label span {
     display: none;
   }
-  .filter-btn svg {
+  .filter ~ label svg {
     -webkit-transform: scale(2);
             transform: scale(2);
   }
@@ -2422,6 +2430,14 @@ hr {
   .carousel_all img {
     height: 100%;
     max-height: 380px;
+  }
+  .filter-list {
+    width: 100%;
+    width: 304px;
+    margin-left: 12px;
+  }
+  .filter ~ label {
+    width: 40px;
   }
 }
 /*# sourceMappingURL=style.css.map */
